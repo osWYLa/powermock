@@ -97,12 +97,19 @@ func New(cfg *Config, logger logger.Logger, registerer prometheus.Registerer) (*
 		methods:    &sync.Map{},
 		Logger:     logger.NewLogger("protoManager"),
 	}
-	if cfg.Synchronization.Enable {
-		synchronization, err := synchronization.New(cfg.Synchronization, logger, registerer)
-		if err != nil {
+
+	syncService, err := synchronization.New(cfg.Synchronization, logger, registerer)
+	if err != nil {
+		return nil, err
+	}
+
+	if cfg.Synchronization.Enable && !cfg.Synchronization.EnableOnce {
+		service.synchronization = syncService
+		if err := service.synchronizeProto(context.Background(), true); err != nil {
 			return nil, err
 		}
-		service.synchronization = synchronization
+	} else if cfg.Synchronization.EnableOnce {
+		service.synchronization = syncService
 		if err := service.synchronizeProto(context.Background(), true); err != nil {
 			return nil, err
 		}
@@ -138,7 +145,7 @@ func (s *Manager) startSynchronization(ctx context.Context, cancelFunc context.C
 		return nil
 	}
 	util.StartServiceAsync(ctx, cancelFunc, s.Logger, func() error {
-		ticker := time.NewTicker(time.Minute * 5)
+		ticker := time.NewTicker(time.Minute * 1)
 		defer ticker.Stop()
 		for {
 			select {

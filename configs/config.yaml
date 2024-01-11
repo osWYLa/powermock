@@ -1,0 +1,52 @@
+log:
+  pretty: true
+  level: debug
+grpcmockserver:
+  enable: true
+  address: 0.0.0.0:30002
+  protomanager:
+    protodir: ./configs
+
+    synchronization:
+      enableonce: true
+      enable: false
+      storagedir: ./configs
+      repository: [ {
+        address: git@gitlab.ushareit.me:san/lacuna-dmp/ads-filter-proto.git ,
+        branch: master
+      } ]
+
+httpmockserver:
+  enable: true
+  address: 0.0.0.0:30003
+apimanager:
+  grpcaddress: 0.0.0.0:30000
+  httpaddress: 0.0.0.0:30001
+pluginregistry: { }
+plugin:
+  simple: {
+    enable: true
+  }
+  grpc: {
+    enable: true
+  }
+  http: {
+    enable: true
+  }
+  redis:
+    enable: false
+    addr: 127.0.0.1:6379
+    password: ""
+    db: 0
+    prefix: /powermock/
+  rediscluster:
+    enable: false
+    addresses:
+      - xxx.xx.xx.xx:7028
+      - xxx.xx.xx.xx:7027
+      - xxx.xx.xx.xx:7029
+      - xxx.xx.xx.xx:7029
+      - xxx.xx.xx.xx:7026
+      - xxx.xx.xx.xx:7028
+    password: ""
+    prefix: /powermock/

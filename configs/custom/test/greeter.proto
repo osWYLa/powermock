@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package filter.custom;
+// /filter.custom.Greeter/Hello
+option go_package = "powermock/examples/filter/custom;custom";
+
+service Greeter {
+    rpc Hello(HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+    string message = 2;
+}
+
+message HelloResponse {
+    string message = 2;
+}

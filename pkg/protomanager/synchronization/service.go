@@ -27,6 +27,7 @@ type Service struct {
 
 // Config defines the config structure
 type Config struct {
+	EnableOnce bool
 	Enable     bool
 	StorageDir string
 	Repository []*Repository
@@ -40,7 +41,7 @@ type Repository struct {
 // NewConfig is used to init config with default values
 func NewConfig() *Config {
 	return &Config{
-		Enable: true,
+		EnableOnce: true,
 	}
 }
 
@@ -50,9 +51,14 @@ func (c *Config) IsEnabled() bool {
 	return c.Enable
 }
 
+func (c *Config) IsEnableOnce() bool {
+	return c.EnableOnce
+}
+
 // RegisterFlags is used to register flags
 func (c *Config) RegisterFlagsWithPrefix(prefix string, f *pflag.FlagSet) {
 	f.BoolVar(&c.Enable, prefix+"enable", c.Enable, "define whether the component is enabled")
+	f.BoolVar(&c.EnableOnce, prefix+"enableonce", c.EnableOnce, "define whether the component is enabled")
 	f.StringVar(&c.StorageDir, prefix+"storageDir", c.StorageDir, "local storage dir of repositories")
 }
 

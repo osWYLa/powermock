@@ -1,0 +1,113 @@
+uniqueKey: "SAN-LacunaADX-Autotest_Test_HTTP_GET/hello"
+path: "/hello"
+method: "GET"
+cases:
+  - response:
+      simple:
+        header:
+          x-unit-id: "3"
+          x-unit-region: "sh"
+        trailer:
+          x-api-version: "1.3.2"
+        body: |
+          hello world!
+
+---
+
+uniqueKey: "SAN-LacunaADX-Autotest_Test_HTTP_GET/hello2"
+path: "/hello2"
+method: "GET"
+cases:
+  - response:
+      simple:
+        header:
+          x-unit-id: "3"
+          x-unit-region: "sh"
+        trailer:
+          x-api-version: "1.3.2"
+        body: |
+          hello world222http!
+
+
+---
+
+uniqueKey: "SAN-LacunaADX-Autotest_Test_HTTP_GET/hello3"
+path: "/hello3"
+method: "GET"
+cases:
+  - response:
+      simple:
+        header:
+          x-unit-id: "3"
+          x-unit-region: "sh"
+        trailer:
+          x-api-version: "1.3.2"
+        body: |
+          {"message": "hello world!", "code": 200}
+
+---
+
+uniqueKey: "SAN-LacunaADX-Autotest_Test_GRPC_POST/filter.FilterService/Filter"
+path: "/filter.FilterService/Filter"
+method: "POST"
+cases:
+  - response:
+      simple:
+        header:
+          x-unit-id: "3"
+          x-unit-region: "sh"
+        trailer:
+          x-api-version: "1.3.2"
+        body: |
+          {"message": "hello world grpc!"}
+
+---
+
+uniqueKey: "SAN-LacunaADX-Autotest_Test_GRPC_POST/filter.custom.Greeter/Hello"
+path: "/filter.custom.Greeter/Hello"
+method: "POST"
+cases:
+  - response:
+      simple:
+        header:
+          x-unit-id: "3"
+          x-unit-region: "sh"
+        trailer:
+          x-api-version: "1.3.2"
+        body: |
+          {"message": "hello world grpc custom !"}
+
+
+
+---
+
+uniqueKey: "SAN-LacunaADX-Autotest_Test_HTTP_GET/ua_offer"
+path: "/ua_offer"
+method: "GET"
+cases:
+  - response:
+      simple:
+        header:
+          x-unit-id: "3"
+          x-unit-region: "sh"
+        trailer:
+          x-api-version: "1.3.2"
+        body: |
+          {"msg":"success","page":1,"status":1,"total_count":1,"offers":[{"id":"2008982","name":"com.freeplay.runandfight_Global","pkg_name":"com.freeplay.runandfight","app_name":"freeplay","description":"","icon":"","payout_model":"CPI","target_conversion":"Install","target_cap":"0","payout":"0.5","currency":"USD","daily_cap":"","click_cap":"","kpi":"cvr 0.2%","expiration_date":"2099-12-31","priview_link":"https://play.google.com/store/apps/details?id=com.freeplay.runandfight&hl=en","tracking_link":"http://trident-test.bigpinggo.com/click?advid=30&campid=2008982&platform=felix&pkg=com.freeplay.runandfight&clickid={click_id}&offer_name={offer_name}&creative_id={creative_id}&creative_name={creative_name}&affiliate_id={affiliate_id}&idfa={idfa}&gaid={gaid}&imei={imei}&android_id={android_id}&mac={mac}&oaid={oaid}&uagent={ua}&os_platform={os_platform}&os_version={os_version}&device_model={device_model}&ip={ip}&country_code={country_code}&ext={ext}&rta_token={rta_token}&san_campid=1000441&adset_id=5650&c_cto=0","targeting":{"geo":["Global"],"geo_exclude":["TR"],"os":"android","os_vers":""},"black_channel":"","white_channel":""},{"id":"2009677","name":"ajaib.co.id_Global","pkg_name":"ajaib.co.id","app_name":"Ajaib","description":"","icon":"","payout_model":"CPI","target_conversion":"Install","target_cap":"0","payout":"20","currency":"USD","daily_cap":"2","click_cap":"","kpi":"cvr 0.2%","expiration_date":"2099-12-31","priview_link":"http://amp-cdn-test.rqmob.com/apps/2023-05-31/ajaib.co.id-1685523301.apk","tracking_link":"http://trident-test.bigpinggo.com/click?advid=30&campid=2009677&platform=felix&pkg=ajaib.co.id&clickid={click_id}&offer_name={offer_name}&creative_id={creative_id}&creative_name={creative_name}&affiliate_id={affiliate_id}&idfa={idfa}&gaid={gaid}&imei={imei}&android_id={android_id}&mac={mac}&oaid={oaid}&uagent={ua}&os_platform={os_platform}&os_version={os_version}&device_model={device_model}&ip={ip}&country_code={country_code}&ext={ext}&rta_token={rta_token}&san_campid=1000439&adset_id=3881&c_cto=0","targeting":{"geo":["Global"],"geo_exclude":[""],"os":"android","os_vers":""},"black_channel":"","white_channel":""},{"id":"1498521","name":"com.gp.no-cdn_Global","pkg_name":"com.gp.no-cdn","app_name":"gp-no-cdn","description":"","icon":"","payout_model":"CPI","target_conversion":"Install","target_cap":"0","payout":"5","currency":"USD","daily_cap":"","click_cap":"","kpi":"cvr 0.2%","expiration_date":"2099-12-31","priview_link":"https://play.google.com/store/apps/details?id=com.gp.no-cdn&hl=en","tracking_link":"http://trident-test.bigpinggo.com/click?advid=30&campid=1498521&platform=felix&pkg=com.gp.no-cdn&clickid={click_id}&offer_name={offer_name}&creative_id={creative_id}&creative_name={creative_name}&affiliate_id={affiliate_id}&idfa={idfa}&gaid={gaid}&imei={imei}&android_id={android_id}&mac={mac}&oaid={oaid}&uagent={ua}&os_platform={os_platform}&os_version={os_version}&device_model={device_model}&ip={ip}&country_code={country_code}&ext={ext}&rta_token={rta_token}&san_campid=1000479&adset_id=3948&c_cto=0","targeting":{"geo":["Global"],"geo_exclude":["JP","CN","IN"],"os":"android","os_vers":""},"black_channel":"","white_channel":""}]}
+
+---
+
+uniqueKey: "SAN-LacunaADX-Autotest_Test_HTTP_GET/cpi_dsp_offer"
+path: "/cpi_dsp_offer"
+method: "GET"
+cases:
+  - response:
+      simple:
+        header:
+          x-unit-id: "3"
+          x-unit-region: "sh"
+        trailer:
+          x-api-version: "1.3.2"
+        body: |
+          {"ret_code":10000,"err_msg":"success","data":{"total":6383,"list":[{"id":2188868,"offer_id":"1439478","offer_name":"Bybit IN AOS CPA P360_fly1201","dsp_id":10018,"dsp_name":"flymobi","pkg_name":"com.bybit.app","s2s_track_url":"http://ping-test.rqmob.com/click?advid=30&campid=7379931&platform=shareit_attribution&pkg={pkg}&is_offline=0&requestid={requestid}&gaid={gaid}&device_id={device_id}&android_id={android_id}&beyla_id={beyla_id}&imei={imei}&imsi={imsi}&c={c}&site_id={site_id}&c_id={c_id}&adset={adset}&adset_id={adset_id}&ad={ad}&ad_id={ad_id}&ad_type={ad_type}&cost_model={cost_model}&cost_currency={cost_currency}&cost_value={cost_value}&remote_ip={remote_ip}&country_code={country_code}&ip={ip}&os_version={os_version}&placement={placement}&other_category={other_category}&ext_info={ext_info}&uagent={uagent}&sid={sid}&channel_pkg={channel_pkg}&channel_pkg_ver={channel_pkg_ver}&app_type={app_type}&app_id={app_id}&real_attrplat={real_attrplat}&adpos_id={adpos_id}&midas_camp_id={midas_camp_id}&midas_traffic_type={midas_traffic_type}&amp_app_id={amp_app_id}&is_pre_install={is_pre_install}&cut_type=1&package_type={package_type}&publisher={publisher}&oaid={oaid}&sub_source=san_oem&ext={ext}","payout":39,"currency":"USD","os":"android","os_ver":"{\"0\":\"all\"}","location":"[{\"country\":\"IN\",\"provinces\":null}]","daily_cap":10,"billing_type":"CPI","preview_url":"https://play.google.com/store/apps/details?id=com.bybit.app&hl=en-us&gl=ru"}]}}
+
